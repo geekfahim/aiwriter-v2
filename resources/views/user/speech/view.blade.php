@@ -1,0 +1,1 @@
+<textarea id="editorContent" name="editor1" data-url="{{ url('audio/'.$project->uuid.'/update-speech') }}">{{ isset($audio) ? $audio->text : '' }}</textarea>
