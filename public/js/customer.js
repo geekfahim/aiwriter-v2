@@ -56,7 +56,29 @@
         }
     });
 
-  
+    const templateSearch = document.querySelector('.template-search');
+
+    document.addEventListener("click", function(event) {
+        var container = document.querySelector(".user-menu");
+        if (!container.contains(event.target)) {
+            var elements = document.querySelectorAll('.user-menu');
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].classList.add('d-none');
+            }
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        let footer = event.target.closest('.user-menu-footer');
+        if (!footer) return;
+        event.stopPropagation();
+        
+        let elements = document.querySelectorAll('.user-menu');
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].classList.toggle('d-none');
+        }
+    });
+
     document.querySelector("#sidebar").addEventListener("click", function(event) {
         let span = event.target.closest(".mark-favorite");
         if (!span) return;
@@ -71,34 +93,8 @@
         };
         xhr.send();
     });
-    // sort.js
-$(document).ready(function() {
-    $("#sortSelect").on("change", function() {
-      var selectedValue = $(this).val();
-      var gridItemsContainer = $("#gridItemsContainer");
-      var gridItems = gridItemsContainer.children(".grid-item");
-  
-      if (selectedValue === "1") {
-        // A-Z Sort
-        gridItems.sort(function(a, b) {
-          var aText = $(a).find("h6").text().toUpperCase();
-          var bText = $(b).find("h6").text().toUpperCase();
-          return aText.localeCompare(bText);
-        });
-      } else if (selectedValue === "2") {
-        // Z-A Sort
-        gridItems.sort(function(a, b) {
-          var aText = $(a).find("h6").text().toUpperCase();
-          var bText = $(b).find("h6").text().toUpperCase();
-          return bText.localeCompare(aText);
-        });
-      }
-  
-      gridItems.detach().appendTo(gridItemsContainer);
-    });
-  });
-  
-    if(typeof templateSearch !== 'undefined'){
+
+    if(templateSearch){
         document.querySelector('.template-search').addEventListener('keyup', async function(event) {
             let searchTerm = event.target.value;
 

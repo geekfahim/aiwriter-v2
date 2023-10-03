@@ -20,7 +20,6 @@
         "php-ffmpeg/php-ffmpeg": "^1.1",
         "phpmailer/phpmailer": "^6.7",
         "phpoffice/phpword": "^1.0",
-        "rachidlaasri/laravel-installer": "^4.0",
         "razorpay/razorpay": "^2.8",
         "sendgrid/sendgrid": "^8.0",
         "stripe/stripe-php": "^10.5",

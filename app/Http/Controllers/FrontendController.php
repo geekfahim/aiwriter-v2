@@ -2,21 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use DB;
 use App\Http\Controllers\Controller as BaseController;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
-use Illuminate\Validation\Rule; 
-use App\Models\PasswordReset;
 use App\Models\Review;
 use App\Models\SubscriptionPlan;
-use App\Models\User;
-use App\Models\UserSubscription;
+use Illuminate\Support\Facades\DB;
 use Lunaweb\RecaptchaV3\Facades\RecaptchaV3;
 use Hash;
 use Helper;
-use League\ISO3166\ISO3166;
 use Session;
 use Socialite;
 use Validator;
@@ -26,11 +19,9 @@ class FrontendController extends BaseController
     public function index(Request $request){
         $name = 'home';
         $page = DB::table('pages')->where('name', $name)->first();
-        
         //Check if content is available
         if(!isset($page->content)){
             $default_content = view('frontend.defaults.'.$name)->render();
-
             $update = DB::table('pages')
                 ->where('name', $name)
                 ->update([
@@ -41,21 +32,20 @@ class FrontendController extends BaseController
         $data['page'] = DB::table('pages')->where('name', $name)->first();
         $data['reviews'] = Review::where('status', 'active')->get();
         $data['page_title'] = __('Home');
-
         return view('frontend.main', $data);
     }
 
     public function pricing(Request $request){
         $data['page_title'] = 'Pricing';
         $data['plans'] = SubscriptionPlan::where('status', 'active')->orderBy('monthly_price', 'asc')->get();
-        
+
         return view('frontend.pricing', $data);
     }
 
     public function terms(Request $request){
         $name = 'terms';
         $page = DB::table('pages')->where('name', $name)->first();
-        
+
         //Check if content is available
         if(!isset($page->content)){
             $default_content = view('frontend.defaults.'.$name)->render();
@@ -96,9 +86,9 @@ class FrontendController extends BaseController
 
     public function contact(Request $request){
         if ($request->isMethod('get')){
-        $data['page_title'] = __('Contact Us');
-        
-        return view('frontend.contact', $data);
+            $data['page_title'] = __('Contact Us');
+
+            return view('frontend.contact', $data);
         } else if ($request->isMethod('post')){
             $validator = Validator::make($request->all(),[
                 'first_name' => 'required',
@@ -106,7 +96,7 @@ class FrontendController extends BaseController
                 'email' => 'required',
                 'details' => 'required',
             ]);
-    
+
             if ($validator->passes()) {
                 if(Helper::config('recaptcha_active') == 1){
                     $score = RecaptchaV3::verify($request->get('g-recaptcha-response'), 'contact');
@@ -142,5 +132,20 @@ class FrontendController extends BaseController
 
             return response()->json(['success' => false, 'errors'=>$validator->messages()->get('*')]);
         }
+    }
+//@todo
+    public function customPrompt()
+    {
+//        $name = 'policy';
+//        $page = DB::table('pages')->where('name', $name)->first();
+//        dd($page);
+//        $data['page'] = DB::table('pages')->where('name', $name)->first();
+//        $data['page_title'] = __('Privacy Policy');
+        return view('frontend.custom_prompt_service');
+    }
+
+    public function aiWriter()
+    {
+        return view('frontend.ai_writer');
     }
 }

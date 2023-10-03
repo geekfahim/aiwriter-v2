@@ -1,0 +1,18 @@
+#header-text-text .bg {
+    background-image: url('../images/uploaded/2/artificial-intelligence-g8acdfba8a_1280.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    opacity: 0.25;
+}
+#desc-text-halfbg-3 .bg-wrap {
+	background: radial-gradient(circle, #00c0ff 30%, #882195 70%);
+}
+
+#text-2col .bg-wrap {}#benefits-3col-5 .bg {
+    background-image: url('../images/bg-29.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity:0.1;
+}

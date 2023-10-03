@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\BillingController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -31,11 +32,14 @@ use App\Http\Controllers\Admin\TestimonialController;
 Route::post('/install/check-db', [App\Http\Controllers\Installer::class, 'checkConnectDatabase']);
 
 Route::prefix('/')->middleware(['check-db-connection'])->group(function () {
-    Route::match(['get', 'post'], '/', [App\Http\Controllers\FrontendController::class, 'index']);
-    Route::match(['get', 'post'], 'pricing', [App\Http\Controllers\FrontendController::class, 'pricing']);
-    Route::match(['get', 'post'], 'contact-us', [App\Http\Controllers\FrontendController::class, 'contact']);
-    Route::match(['get', 'post'], 'terms', [App\Http\Controllers\FrontendController::class, 'terms']);
-    Route::match(['get', 'post'], 'privacy', [App\Http\Controllers\FrontendController::class, 'privacy']);
+    Route::match(['get', 'post'], '/', [FrontendController::class, 'index']);
+    Route::match(['get', 'post'], 'pricing', [FrontendController::class, 'pricing']);
+    Route::match(['get', 'post'], 'contact-us', [FrontendController::class, 'contact']);
+    Route::match(['get', 'post'], 'about-us', [FrontendController::class, 'contact']);
+    Route::match(['get', 'post'], 'custom-prompt', [FrontendController::class, 'customPrompt']);
+    Route::match(['get', 'post'], 'ai-writer', [FrontendController::class, 'aiWriter']);
+    Route::match(['get', 'post'], 'terms', [FrontendController::class, 'terms']);
+    Route::match(['get', 'post'], 'privacy', [FrontendController::class, 'privacy']);
 
     Route::match(['get', 'post'], 'webhook/{processor}', [App\Http\Controllers\WebhookController::class, 'processWebhook']);
 
@@ -62,7 +66,7 @@ Route::prefix('/')->middleware(['check-db-connection'])->group(function () {
             Route::get('/prompts/sort', [App\Http\Controllers\User\DocumentController::class, 'sort'])->name('templates.sort');
             Route::get('/filterProjectTemplates', [App\Http\Controllers\User\DocumentController::class, 'filter_bysub']);
             Route::get('/subcategories', [PromptTemplateController::class, 'getSubcategories']);
-            
+
             Route::match(['get', 'post'], '/prompts/add/token/{token}/{amount}', [App\Http\Controllers\User\DocumentController::class, 'addToken'])->name('add.token');
             Route::post('/add-token-details', [App\Http\Controllers\User\DocumentController::class, 'addTokenDetails'])->name('add.token.details');
             Route::get('/add-token-details-token', [App\Http\Controllers\User\DocumentController::class, 'addTokenDetailsToken'])->name('add.token.details');
@@ -70,7 +74,7 @@ Route::prefix('/')->middleware(['check-db-connection'])->group(function () {
             Route::get('documents', [App\Http\Controllers\User\DocumentController::class, 'index']);
             Route::get('audios', [App\Http\Controllers\User\AudioController::class, 'index']);
 
-            Route::post('/subscription',  [App\Http\Controllers\User\SubscriptionController::class, 'index']);
+            Route::post('/subscription', [App\Http\Controllers\User\SubscriptionController::class, 'index']);
 
             Route::get('templates/{category?}', [App\Http\Controllers\User\DashboardController::class, 'templates']);
             Route::get('template/mark-as-favorite/{id}', [App\Http\Controllers\User\DashboardController::class, 'mark_as_favorite'])->name('favorite.template');
@@ -104,10 +108,10 @@ Route::prefix('/')->middleware(['check-db-connection'])->group(function () {
             Route::get('chat', [App\Http\Controllers\User\ChatController::class, 'index']);
             Route::post('chat', [App\Http\Controllers\User\ChatController::class, 'processMessage']);
             Route::post('chat-personality', [App\Http\Controllers\User\ChatController::class, 'changePersonality'])->name('chat.personality');
-            
+
             Route::match(['get', 'post'], 'settings', [App\Http\Controllers\User\SettingController::class, 'index']);
             Route::post('change-password', [App\Http\Controllers\User\SettingController::class, 'password']);
-        
+
             //Billing
             Route::get('billing', [App\Http\Controllers\User\SettingController::class, 'billing']);
             Route::get('invoice/{id}', [App\Http\Controllers\User\BillingController::class, 'view_invoice']);
@@ -130,8 +134,8 @@ Route::prefix('admin')->middleware(['check-db-connection'])->group(function () {
     Route::middleware(['auth:admin'])->group(function () {
         Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
 
-        Route::match(['get', 'post'],'contacts/add', [ContactController::class, 'add']);
-        Route::match(['get', 'post'],'contacts/groups/add', [ContactController::class, 'add_group']);
+        Route::match(['get', 'post'], 'contacts/add', [ContactController::class, 'add']);
+        Route::match(['get', 'post'], 'contacts/groups/add', [ContactController::class, 'add_group']);
 
         Route::get('subscriptions', [SubscriptionController::class, 'index']);
         Route::match(['get', 'post'], 'subscriptions/search', [SubscriptionController::class, 'search']);
@@ -141,7 +145,7 @@ Route::prefix('admin')->middleware(['check-db-connection'])->group(function () {
         Route::match(['get', 'post'], 'billing/search', [BillingController::class, 'search']);
 
         Route::get('templates', [TemplateController::class, 'index']);
-        Route::match(['get', 'post'],'templates/add', [TemplateController::class, 'add']);
+        Route::match(['get', 'post'], 'templates/add', [TemplateController::class, 'add']);
 
         Route::match(['get', 'post'], 'settings/general', [SettingController::class, 'general']);
         Route::post('settings/contacts', [SettingController::class, 'contacts']);
@@ -227,23 +231,23 @@ Route::prefix('admin')->middleware(['check-db-connection'])->group(function () {
         Route::get('settings/prompt-sub-categories/list/{id}', [SubCategoryController::class, 'list'])->name('subcategory_list');
         Route::match(['get', 'post'], 'settings/prompt-subcategories/edit/{id}', [SubCategoryController::class, 'update']);
         Route::match(['get', 'post'], 'settings/prompt-subcategories/delete/{id}', [SubCategoryController::class, 'delete']);
-        
+
         //AI Chat
         Route::get('settings/chat', [App\Http\Controllers\User\ChatController::class, 'index']);
         Route::post('settings/chat', [App\Http\Controllers\User\ChatController::class, 'processMessage']);
         Route::post('settings/chat-personality', [App\Http\Controllers\User\ChatController::class, 'changePersonality'])->name('chat.personality');
-        
+
 
         Route::get('settings/prompts', [PromptTemplateController::class, 'index']);
         Route::get('getSubcategories', [PromptTemplateController::class, 'getSubcategories'])->name('subcategories_get');
         Route::post('prompts/search', [PromptTemplateController::class, 'search'])->name('prompt_search');
-        Route::get('settings/prompts-list', [PromptTemplateController::class, 'show_prompt'])->name('show_prompt'); 
+        Route::get('settings/prompts-list', [PromptTemplateController::class, 'show_prompt'])->name('show_prompt');
         Route::get('settings/import/prompts', [PromptTemplateController::class, 'import_prompt'])->name('import_prompt');
-        Route::post( 'settings/prompts/bulk/add', [PromptTemplateController::class, 'bulk_create'])->name('prompt.bulk.add');
+        Route::post('settings/prompts/bulk/add', [PromptTemplateController::class, 'bulk_create'])->name('prompt.bulk.add');
         Route::match(['get', 'post'], 'settings/prompts/add', [PromptTemplateController::class, 'create']);
         Route::match(['get', 'post'], 'settings/prompts/edit/{id}', [PromptTemplateController::class, 'update']);
         Route::match(['get', 'post'], 'settings/prompts/delete/{id}', [PromptTemplateController::class, 'delete']);
-        
+
         //Newly added
         Route::get('settings/prompts/check/free', [SubscriptionPlanController::class, 'plan_check'])->name('prompt.plan.check');
         Route::post('settings/prompts/bulk/delete', [PromptTemplateController::class, 'bulk_delete'])->name('prompt.bulk.delete');

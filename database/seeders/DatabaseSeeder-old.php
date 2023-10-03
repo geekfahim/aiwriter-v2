@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+//namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -14,6 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //        $sqlFilePath = database_path('seeders/gpt.sql');
+//        $sql = File::get($sqlFilePath);
+//        DB::unprepared($sql);
         $this->call([
             CategorySeeder::class,
             EmailSeeder::class,

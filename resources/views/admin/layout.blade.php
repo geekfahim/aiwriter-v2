@@ -7,7 +7,10 @@
 	<title>{{ Helper::config('company_name') }}</title>
     <link rel="icon" type="image/png" href="{{ asset('uploads/brand/' . Helper::config('favicon')) }}"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.6.0/dt-1.13.1/af-2.5.1/fh-3.3.1/r-2.4.0/sc-2.0.7/sb-1.4.0/sl-1.5.0/datatables.min.css"/>
-
+    <!-- Feather Icon -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <!-- JS -->
+    <script src="{{ url('js/jquery-3.6.3.min.js') }}"></script>
     <style>
         .sidebar {
             height: 100%; /* 100% Full-height */
@@ -46,7 +49,7 @@
                 right: 25px;
                 font-size: 36px;
                 margin-left: 50px;
-            }   
+            }
         }
             @media screen and (max-height: 450px) {
                 .sidebar {
@@ -58,14 +61,14 @@
             }
     </style>
 
-    <!-- CSS -->  
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/theme-style.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('css/theme-style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/summernote/summernote-bs4.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.css') }}"/>
 
-    <!-- JS -->   
+    <!-- JS -->
     <script src="{{ url('js/jquery-3.6.3.min.js') }}"></script>
 </head>
 <body>
@@ -76,7 +79,7 @@
         @include('admin.sidebar')
         @yield('content')
     </div>
-    
+
     <!-- Global JS -->
     <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('vendor/bootbox/js/bootbox.min.js') }}"></script>
@@ -95,6 +98,9 @@
         document.getElementById("mySidebar").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
         }
+    </script>
+    <script>
+        feather.replace()
     </script>
 </body>
 </html>

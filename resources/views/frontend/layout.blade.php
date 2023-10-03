@@ -5,33 +5,57 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-	<title>{{ Helper::config('company_name') }} - {{ $page_title }}</title>
+    <title>{{ Helper::config('company_name') }} - {{ $page_title ?? 'Prompt' }}</title>
     <link rel="icon" type="image/png" href="{{ asset('uploads/brand/' . Helper::config('favicon')) }}"/>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
-    
-    <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap-icons/font/bootstrap-icons.css') }}"/>
+    <base href="" target="_blank">
+    <meta
+        content="Prompt, Prompts, Prompt Engineer, Custom prompts, ChatGPT Prompts, Ai Prompts, Midjourney, Midjourney prompts, AI tools, Ai writer, Speech to text, Ai image generator, Generator, AI image, AI writer, Writer AI "
+        name="keywords"/>
+    <meta
+        content="Access AI tools and custom prompts to enhance your business. Drive customer engagement, streamline workflows, and unlock new opportunities for growth. "
+        name="description"/>
+    <meta content="width=device-width,initial-scale=1.0,viewport-fit=cover" name="viewport">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/theme-style.css') }}">
-    @if (Helper::config('recaptcha_active') == 1)
-        {!! RecaptchaV3::initJs() !!} 
-    @endif
+    <link href="{{asset('css/fonts.css')}}" rel="stylesheet"/>
+    <link href="{{asset('css/bootstrap.weber.css')}}" rel="stylesheet"/>
+    <link href="{{asset('css/fx.css')}}" rel="stylesheet"/>
+    <link href="{{asset('css/aos.css')}}" rel="stylesheet"/>
+    <link href="{{asset('css/custom.css')}}" rel="stylesheet"/>
+    <link href="{{asset('css/index.css')}}" rel="stylesheet"/>
+    <link href="{{asset('css/preloader.css')}}" rel="stylesheet"/>
+
 </head>
 
-<body>
+<body class="light-page">
+<div id="preloader">
+    <div class="circles">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<div id="wrap">
     @include('frontend.layout.navbar')
     @yield('content')
-    @include('frontend.layout.footer')
+</div>
 
-    <!-- JS Global Compulsory  -->
-    <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 
-    <!-- JS -->
-    <script src="{{ asset('js/theme.min.js') }}"></script>
-    <script src="{{ asset('js/theme-custom.js') }}"></script>
+@include('frontend.layout.footer')
+<div class="modal-container"></div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key="></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="{{asset('js/jquery-2.1.4.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/jquery.validate.min.js')}}"></script>
+<script src="{{asset('js/jquery.smooth-scroll.min.js')}}"></script>
+<script src="{{asset('js/rellax.min.js')}}"></script>
+<script src="{{asset('js/aos.js')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>
+<script src="{{asset('js/index.js')}}"></script>
+
 </body>
 </html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Prompt Engineer SaaS Documentation</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./images/prompt favicon-32x32.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./vendor/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/theme.min.css">
+  <link rel="stylesheet" href="./css/theme-style.css">
+</head>
+
+<body>
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Hero -->
+    <div class="bg-dark">
+      <div class="container position-relative content-space-1 content-space-lg-2">
+        <img class="navbar-brand-logo w-100 mb-5" src="./images/prompt eing  no bg 250x250.png" alt="Prompt Engineer SaaS ">
+        <h1 class="text-white">Documentation</h1>
+        <p class="text-white">Updated: 26th March 2023</p>
+      </div>
+    </div>
+    <!-- End Hero -->
+
+    <!-- Description -->
+    <div class="container content-space-1 content-space-lg-3">
+      <div class="row">
+        <div class="col-md-4 col-lg-3 mb-3 mb-md-0">
+          <!-- Navbar -->
+          <div class="navbar-expand-md side-menu-documentation-sticky">
+            <div class="d-grid mb-3">
+              <!-- Navbar Toggle -->
+              <button type="button" class="navbar-toggler btn btn-white w-100" data-bs-toggle="collapse" data-bs-target="#navbarVerticalNavMenu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarVerticalNavMenu">
+                <span class="d-flex justify-content-between align-items-center">
+                  <span class="text-dark mb-0">Menu</span>
+
+                  <span class="navbar-toggler-default">
+                    <i class="bi-list"></i>
+                  </span>
+
+                  <span class="navbar-toggler-toggled">
+                    <i class="bi-x"></i>
+                  </span>
+                </span>
+              </button>
+              <!-- End Navbar Toggle -->
+            </div>
+
+            <!-- Navbar Collapse -->
+            <div id="navbarVerticalNavMenu" class="collapse navbar-collapse">
+              <ul id="navbarSettings" class="js-sticky-block js-scrollspy nav nav-tabs nav-link-gray nav-vertical"
+                  data-hs-sticky-block-options='{
+                   "parentSelector": "#navbarVerticalNavMenu",
+                   "targetSelector": "#header",
+                   "breakpoint": "md",
+                   "startPoint": "#navbarVerticalNavMenu",
+                   "endPoint": "#stickyBlockEndPoint",
+                   "stickyOffsetTop": 20
+                 }'>
+                 <li class="nav-item">
+                     <a class="nav-link" href="./index.html">Introduction</a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="nav-link" href="./getting-started.html">Getting Started</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="./known issues.html">Known issues</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="./front end.html">Front end</a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="nav-link active" href="./admin.html">Admin Panel</a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="nav-link" href="./customer.html">Customer Panel</a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="nav-link" href="./Plan configuration and acsess.html">Plans configuration and acsess to prompts and tools</a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="nav-link" href="./recomended setup for SaaS.html">Recomended setup for SaaS</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="./faq.html">FAQs</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="./others.html">Others</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="./Important - terms and refun policy.html">Important - Terms and Refun Policy</a>
+                 </li>
+              </ul>
+            </div>
+            <!-- End Navbar Collapse -->
+          </div>
+          <!-- End Navbar -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-md-8 col-lg-9">
+            <h3 class="docs-page-header-title border-bottom mb-7">Plan configuration and acsess in system</h3>
+            <h4 class="mt-7">Registration logic and trial perioid</h4>
+
+            <h5 class="docs-page-header-title" data-bs-toggle="collapse" href="#dashboard" role="button" aria-expanded="false" aria-controls="dashboard">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 256 256"><path fill="currentColor" d="m181.7 133.7l-80 80A8.3 8.3 0 0 1 96 216a8.5 8.5 0 0 1-3.1-.6A8 8 0 0 1 88 208V48a8 8 0 0 1 4.9-7.4a8.4 8.4 0 0 1 8.8 1.7l80 80a8.1 8.1 0 0 1 0 11.4Z"/></svg>
+                Trial perioid rules
+            </h5>
+            <p>  Prompt Eingineer SaaS registration process is designed to offer both trial perioid or directly force your client into paid one.
+              Main controll for trial perioid can overide your entire plans you have created if you navigate to Admin=>Settings=> General settings</p>
+            <div class="collapse show mb-7" id="dashboard">
+                <div class="card card-body shadow-sm small">
+                    <img class="img-fluid" src="./images/first acsess to SaaS controlls.png" alt="elegant icons">
+                    <p>If we set Trial perioid to 0, it will disable acsess to AI tools and to prompts.
+                       This means your client will be able to sign up=>enter to specific plan for prompts and than it will invoke pop up to upgrade and pay for plan to acsess prompt discover function or use them within AI tools  </p>
+                    <p>When you set trial perioid 1+ it will enable trial tokens to be used wich can be assigned to specific plan from Plan creation tool. It wont immideatly invoke plan upgrade pop up and users will be able to see prompt titles and description.
+                    In order to acsess prompt conetnt they will need to click discover button and add it to collections</p>
+                    <br></br>
+                    <p>If you have a trial period enabled and set >0 then you should add token amount >0.
+                      Make sure from the admin panel>Plans you add trial tokens if you want to make any prompt within tier acsessible. If you set it like this trial tokens will be atomaticaly added to your client ballance
+                      and they will be deducted from total amount once they click discover (+) button. Its important to note, if client consumes all free trial tokens he will need to purchase plan to obtain amount you designate to plan.
+                    </p>
+                    <img class="img-fluid" src="./images/trial tokens.png" alt="elegant icons">
+                </div>
+            </div>
+
+            <h5 class="docs-page-header-title" data-bs-toggle="collapse" href="#customers" role="button" aria-expanded="false" aria-controls="customers">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 256 256"><path fill="currentColor" d="m181.7 133.7l-80 80A8.3 8.3 0 0 1 96 216a8.5 8.5 0 0 1-3.1-.6A8 8 0 0 1 88 208V48a8 8 0 0 1 4.9-7.4a8.4 8.4 0 0 1 8.8 1.7l80 80a8.1 8.1 0 0 1 0 11.4Z"/></svg>
+                Paid plan Tokens
+            </h5>
+            <div class="collapse show mb-7" id="customers">
+                <div class="card card-body shadow-sm small">
+                    <p>Admin can view, add, edit, remove, tokens from specific plan by navigating to Admin>Settings>Billing>Plans.</p>
+                    <img class="img-fluid" src="./images/plan config 2.png" alt="elegant icons">
+                    <p>When you are defining tokens for plan its important to know once this tokens are consumed and client has subscribed to 1 month plan he will need to buy more within same plan.
+                    Here we can configure amount of tokens in plan on mothly basis or yearly base.</p>
+                </div>
+            </div>
+
+            <h5 class="docs-page-header-title" data-bs-toggle="collapse" href="#subscriptions" role="button" aria-expanded="false" aria-controls="subscriptions">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 256 256"><path fill="currentColor" d="m181.7 133.7l-80 80A8.3 8.3 0 0 1 96 216a8.5 8.5 0 0 1-3.1-.6A8 8 0 0 1 88 208V48a8 8 0 0 1 4.9-7.4a8.4 8.4 0 0 1 8.8 1.7l80 80a8.1 8.1 0 0 1 0 11.4Z"/></svg>
+                Configuring additional token price for prompts
+            </h5>
+            <div class="collapse show mb-7" id="subscriptions">
+                <div class="card card-body shadow-sm small">
+                    <p>Main purpose of additional prompt tokens is to enable user to buy more if he consumed all initial tokens in his plan beafore renewal date. This option created so you can better monetize your prompts</p>
+                    <img class="img-fluid" src="./images/additional token price.png" alt="elegant icons">
+                    <br></br>
+                    <p>This function enables you to determine pricing of each induidual token client will purchase. Its important to note you are configuring price per 1 token and that there is no limit in number of tokens client can type to buy.
+                    You set $1 per token and client on his side types in input field 100 tokens. This will invoke payment processing and he will be charged total amount of $100 for 100 tokens.
+                    On the image bellow you can see how it looks on client side if we set $5 per token and amount of 100 tokens. </p>
+                    <img class="img-fluid" src="./images/buy more tokens client side.png" alt="elegant icons">
+                </div>
+            </div>
+
+            <h5 class="docs-page-header-title" data-bs-toggle="collapse" href="#promptcategories" role="button" aria-expanded="false" aria-controls="promptcategories">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 256 256"><path fill="currentColor" d="m181.7 133.7l-80 80A8.3 8.3 0 0 1 96 216a8.5 8.5 0 0 1-3.1-.6A8 8 0 0 1 88 208V48a8 8 0 0 1 4.9-7.4a8.4 8.4 0 0 1 8.8 1.7l80 80a8.1 8.1 0 0 1 0 11.4Z"/></svg>
+                Copy to clipboard relation with prompts in plan mannager
+            </h5>
+            <div class="collapse show mb-7" id="promptcategories">
+                <div class="card card-body shadow-sm small">
+                    <p>This option enables you to secure your intellectual property. For now we have set it up like this so you can manage acsses.
+                    Also its important to note by defult prompt system is set up to not expose prompt content except Title, Description and category. This means AI prompt content field in your prompt creation tool will remain
+                    always hidden.
+                    </p>
+                    <p>Turning on copy to clipoard witin plan creation will enable your client once he discovered prompt and consumed token to copy AI prompt field and export prompt out of SaaS.
+                    This is created so you can safeguard your prompts and eventually allow them only to be used within in app AI tools
+                    </p>
+                    <img class="img-fluid" src="./images/copy to clipboard.png" alt="elegant icons">
+                </div>
+            </div>
+
+            <h5 class="docs-page-header-title" data-bs-toggle="collapse" href="#team" role="button" aria-expanded="false" aria-controls="team">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 256 256"><path fill="currentColor" d="m181.7 133.7l-80 80A8.3 8.3 0 0 1 96 216a8.5 8.5 0 0 1-3.1-.6A8 8 0 0 1 88 208V48a8 8 0 0 1 4.9-7.4a8.4 8.4 0 0 1 8.8 1.7l80 80a8.1 8.1 0 0 1 0 11.4Z"/></svg>
+                Team
+            </h5>
+            <div class="collapse show mb-7" id="team">
+                <div class="card card-body shadow-sm small">
+                    <p>In this section, you can add, edit, deactivate, activate or delete an admin user account.</p>
+                    <img class="img-fluid" src="./images/admin-team-settings.png" alt="elegant icons">
+                </div>
+            </div>
+
+            </div>
+            </div>
+
+          <!-- End Sticky End Point -->
+          <div id="stickyBlockEndPoint"></div>
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Description -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== SECONDARY CONTENTS ========== -->
+  <!-- Go To -->
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;"
+     data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>
+  <!-- ========== END SECONDARY CONTENTS ========== -->
+
+  <!-- JS Global Compulsory  -->
+  <script src="./vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="./vendor/hs-header/dist/hs-header.min.js"></script>
+  <script src="./vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
+  <script src="./vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+  <script src="./vendor/hs-sticky-block/dist/hs-sticky-block.min.js"></script>
+  <script src="./vendor/hs-scrollspy/dist/hs-scrollspy.min.js"></script>
+
+  <!-- JS Unify -->
+  <script src="./js/theme.min.js"></script>
+</body>
+</html>

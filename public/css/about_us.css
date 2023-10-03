@@ -1,0 +1,14 @@
+#header-text-text .bg {
+    background-image: url('../images//uploaded/2/340643186_734731065000145_7917054297395128881_n.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    opacity: 0.08;
+}
+#benefits-3col-10 .bg {
+    background-image: url('../images/uploaded/2/340643186_734731065000145_7917054297395128881_n.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    opacity:0.075;
+}

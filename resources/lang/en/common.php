@@ -14,6 +14,7 @@ return [
     */
 
     'dashboard' => 'Dashboard',
+    'website' => 'Website',
     'documents' => 'Documents',
     'ai_images' => 'AI Images',
     'speech_to_text' => 'Speech To Text',

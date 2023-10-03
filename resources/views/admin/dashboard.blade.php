@@ -14,7 +14,10 @@
             <div class="col-md-3">
                 <div class="card border-0 rounded">
                     <div class="card-body">
-                        <h5 class="mb-4">{{ __('Customers') }}</h5>
+                        <h5 class="mb-4">
+                            <i data-feather="users"></i>
+                            {{ __('Customers') }}
+                        </h5>
                         <h4>{{ CurrencyHelper::format_no_currency($customersTotal) }}</h4>
                     </div>
                 </div>
@@ -22,7 +25,10 @@
             <div class="col-md-3">
                 <div class="card border-0 rounded">
                     <div class="card-body">
-                        <h5 class="mb-4">{{ __('Active Subscriptions') }}</h5>
+                        <h5 class="mb-4">
+                            <i data-feather="toggle-right"></i>
+                            {{ __('Active Subscriptions') }}
+                        </h5>
                         <h4>{{ CurrencyHelper::format_no_currency($subscriptionsTotal) }}</h4>
                     </div>
                 </div>
@@ -30,7 +36,10 @@
             <div class="col-md-3">
                 <div class="card border-0 rounded">
                     <div class="card-body">
-                        <h5 class="mb-4">{{ __('Revenue') }}</h5>
+                        <h5 class="mb-4">
+                            <i data-feather="dollar-sign"></i>
+                            {{ __('Revenue') }}
+                        </h5>
                         <h4>{{ CurrencyHelper::format_with_currency($billingTotal) }}</h4>
                     </div>
                 </div>
@@ -38,7 +47,10 @@
             <div class="col-md-3">
                 <div class="card border-0 rounded">
                     <div class="card-body">
-                        <h5 class="mb-4">{{ __('Content Generated') }}</h5>
+                        <h5 class="mb-4">
+                            <i data-feather="edit-3"></i>
+                            {{ __('Content Generated') }}
+                        </h5>
                         <h4>{{ CurrencyHelper::format_no_currency($contentTotal) }}</h4>
                     </div>
                 </div>
@@ -57,7 +69,7 @@
                                     ->orderBy('count', 'desc')
                                     ->take(5)
                                     ->get();
-                                
+
                                 $otherCount = DB::table('users')->select('country', DB::raw('count(*) as count'))
                                     ->groupBy('country')
                                     ->orderBy('count', 'desc')
@@ -89,6 +101,7 @@
                                     @endphp
                                     <div class="row mb-2">
                                         <div class="col-10">
+                                            <i data-feather="flag"></i>
                                             <span>{{ __('Other Countries') }}</span>
                                             <div class="progress">
                                                 <div class="progress-bar" role="progressbar" style="width: {{ $percentage }}%" aria-valuenow="{{ $percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
@@ -99,7 +112,7 @@
                                         </div>
                                     </div>
                                 @endif
-                            </div>       
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -111,7 +124,7 @@
                         <div>
                             <ul>
                                 @foreach ($topTemplates as $template)
-                                <li class="text-capitalize">{{ $template->name }}</li> 
+                                <li class="text-capitalize">{{ $template->name }}</li>
                                 @endforeach
                             </ul>
                         </div>

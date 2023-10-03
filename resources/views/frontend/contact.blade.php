@@ -1,123 +1,46 @@
 @extends('frontend/layout')
 @section('content')
-<!-- ========== MAIN CONTENT ========== -->
-<main id="content" role="main">
-  <!-- Contact Form -->
-  <div class="overflow-hidden">
-    <div class="container content-space-1 content-space-lg-2">
-      <div class="row">
-        <div class="col-lg-6 mb-10 mb-lg-0">
-          <div class="pe-lg-10">
-            <div class="mb-5">
-              <h1>{{ __('Contact Us') }}</h1>
-            </div>
+    <!-- ========== MAIN CONTENT ========== -->
+    <section id="contact-center-form" class="pt-50 pb-50 pt-md-150 pb-md-100 light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-5 mr-auto" style="">
+                    <h3 class=""><strong>Contact us</strong></h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 100 20" width="100"
+                         class="mb-30 svg-secondary">
+                        <path d="m0 9h100v2h-100z" fill-rule="evenodd"></path>
+                    </svg>
+                    <p class="mb-30" style="">In our work we try to use only the most modern, convenient and interesting
+                        AI solutions.</p>
+                    <div class="inline-group mb-50">
 
-            <!-- Info -->
-            <address>
-              {{ Helper::config('address') }}
-            </address>
-            <!-- End Info -->
 
-            @if (Helper::config('phone') != NULL)
-            <div class="mb-5 d-flex">
-              <span class="d-block">{{ __('Phone') }} :</span>
-              <span class="d-block ms-2">{{ Helper::config('phone') }}</span>
-            </div>
-            @endif
-
-            <div class="d-grid mb-3">
-              @if (Helper::config('email') != NULL)
-                <a class="btn btn-white" href="mailto:{{ Helper::config('email') }}"><i class="bi-envelope-open me-2"></i> {{ Helper::config('email') }}</a>
-              @endif
-            </div>
-          </div>
-        </div>
-        <!-- End Col -->
-
-        <div class="col-lg-6">
-          <div class="position-relative">
-            <!-- Card -->
-            <div class="card card-lg">
-              <!-- Card Body -->
-              <div class="card-body">
-                <h4 class="mb-4">{{ __('Fill in the form') }}</h4>
-
-                <form class="js-validate needs-validation" novalidate="">
-                  @csrf
-                  <div class="row">
-                    <div class="col-sm-6 mb-4 mb-sm-0">
-                      <!-- Form -->
-                      <div class="mb-4">
-                        <label class="form-label" for="contactsFormFirstName">{{ __('First name') }}</label>
-                        <input type="text" class="form-control" name="first_name" id="contactsFormFirstName" placeholder="John" required="">
-                        <span class="invalid-feedback">{{ __('Please enter a valid first name.') }}</span>
-                      </div>
-                      <!-- End Form -->
                     </div>
-                    <!-- End Col -->
-
-                    <div class="col-sm-6">
-                      <!-- Form -->
-                      <div class="mb-4">
-                        <label class="form-label" for="contactsFormLasttName">{{ __('Last name') }}</label>
-                        <input type="text" class="form-control" name="last_name" id="contactsFormLasttName" placeholder="Doe" required="">
-                        <span class="invalid-feedback">{{ __('Please enter a valid last name.') }}</span>
-                      </div>
-                      <!-- End Form -->
-                    </div>
-                    <!-- End Col -->
-                  </div>
-                  <!-- End Row -->
-
-                  <!-- Form -->
-                  <div class="mb-4">
-                    <label class="form-label" for="contactsFormWorkEmail">{{ __('Email') }}</label>
-                    <input type="email" class="form-control" name="email" id="contactsFormWorkEmail" placeholder="email@site.com" aria-label="email@site.com" required="">
-                    <span class="invalid-feedback">{{ __('Please enter a valid email address.') }}</span>
-                  </div>
-                  <!-- End Form -->
-
-                  <!-- Form -->
-                  <div>
-                    <label class="form-label" for="contactsFormDetails">{{ __('Details') }}</label>
-                    <textarea class="form-control" name="details" id="contactsFormDetails" placeholder="{{ __('Tell us about your issue') }}" rows="4" required=""></textarea>
-                    <span class="invalid-feedback">{{ __('This field is required') }}</span>
-                  </div>
-                  <!-- End Form -->
-
-                  @if (Helper::config('recaptcha_active') == 1)
-                      {!! RecaptchaV3::field('contact') !!}
-                      <span class="invalid-feedback">{{ __('Oops! Recaptcha failed. Please refresh and try again.') }}</span>
-                  @endif
-
-                  <div class="d-grid mt-4">
-                    <button type="submit" class="btn btn-dark btn-lg" data-message="{{ __('Inquiry Sent!') }}">{{ __('Send inquiry') }}</button>
-                  </div>
-                </form>
-              </div>
-              <!-- End Card Body -->
+                </div>
+                <div class="col-md-6">
+                    <form action="request.php" class="contact_form form-vertical mb-30"
+                          id="contact-center-form-form" novalidate="novalidate" style="">
+                        <div class="form-group text-field-group"><input type="text" class="form-control"
+                                                                        placeholder="Full Name" name="NAME" size="10">
+                        </div>
+                        <div class="form-group email-field-group"><input type="email" class="form-control"
+                                                                         placeholder="Email Address" name="EMAIL"
+                                                                         size="10"></div>
+                        <div class="form-group textarea-group"><textarea class="form-control" placeholder="Description"
+                                                                         rows="5" name="TEXT"></textarea></div>
+                        <button type="submit" data-loading-text="•••" data-complete-text="Completed!"
+                                data-reset-text="Try again later..." class="btn btn-dark btn-block" style="">Send
+                            message
+                        </button>
+                    </form>
+                    <p class="small text-secondary">You are very important to us, all information received will always
+                        remain confidential.</p>
+                </div>
             </div>
-            <!-- End Card -->
-
-            <!-- SVG Shape -->
-            <figure class="position-absolute bottom-0 end-0 zi-n1 d-none d-md-block mb-n10 width-15rem mr--8rem">
-              <img class="img-fluid" src="./images/svg/illustrations/grid-grey.svg" alt="Image Description">
-            </figure>
-            <!-- End SVG Shape -->
-
-            <!-- SVG Shape -->
-            <figure class="position-absolute bottom-0 end-0 d-none d-md-block me-n5 mb-n5 width-10rem">
-              <img class="img-fluid" src="./images/svg/illustrations/plane.svg" alt="Image Description">
-            </figure>
-            <!-- End SVG Shape -->
-          </div>
         </div>
-        <!-- End Col -->
-      </div>
-      <!-- End Row -->
-    </div>
-  </div>
-  <!-- End Contact Form -->
-</main>
-<!-- ========== END MAIN CONTENT ========== -->
+        <div class="bg-wrap">
+            <div class="bg"></div>
+        </div>
+    </section>
+    <!-- ========== END MAIN CONTENT ========== -->
 @endsection

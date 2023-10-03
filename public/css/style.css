@@ -3,7 +3,7 @@
    Aiwriter CSS
    By The Company Behind axis96.co
    File Description : Main css file
-	
+
 =================================================
   Table of Contents
 =================================================
@@ -13,7 +13,7 @@
     3. Dashboard
     4. Trips
     5. Billing
-    
+
 =======================================================*/
 /* =================================== */
 /*  1. Basic
@@ -82,9 +82,9 @@
   font-style: italic;
 }
 
-html, body { 
+html, body {
     height: 100%;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     font-family: "Poppins"!important;
     font-size: 13px;
     font-weight: 400;
@@ -285,7 +285,7 @@ input:focus, textarea:focus, select:focus, .form-select:focus{
 }
 
 .invoice-nav .nav-item.active{
-  
+
 }
 
 .invoice-nav .nav-item .nav-link{
@@ -593,7 +593,7 @@ label.error {
 .sidebar-closed .sidebar-footer a{
     display: none;
 }
-  
+
   /* Sidebar links */
 .sidebar a {
     display: block;
@@ -601,7 +601,11 @@ label.error {
     padding: 10px 32px 10px 30px;
     text-decoration: none;
 }
-
+.sidebar-container>a:hover {
+    background: #0a53be;
+    color: #fff;
+    transition: all;
+}
 .sidebar .dropdown {
   display: block;
   color: inherit;
@@ -649,7 +653,7 @@ label.error {
   font-weight: 900;
   border: none;
 }
-  
+
 /* Active/current link */
 .sidebar a.active, .sidebar .dropdown.active {
     color: #fff;
@@ -687,12 +691,12 @@ label.error {
     float: right;
     margin-top: 5px;
 }
-  
+
   /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
   div.content {
     margin-left: 17em;
   }
-  
+
   /* On screens that are less than 700px wide, make the sidebar into a topbar */
   @media screen and (max-width: 700px) {
     .sidebar {
@@ -713,7 +717,7 @@ label.error {
     }
     div.content {margin-left: 0;}
   }
-  
+
   /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
   @media screen and (max-width: 400px) {
     .sidebar a {
@@ -819,7 +823,7 @@ label.error {
 .round {
     position: relative;
 }
-  
+
 .round label {
     background-color: #fff;
     border: 1px solid #ccc;
@@ -831,7 +835,7 @@ label.error {
     top: 0;
     width: 20px;
 }
-  
+
 .round label:after {
     border: 2px solid #fff;
     border-top: none;
@@ -845,16 +849,16 @@ label.error {
     transform: rotate(-45deg);
     width: 11px;
 }
-  
+
 .round input[type="checkbox"] {
     visibility: hidden;
 }
-  
+
 .round input[type="checkbox"]:checked + label {
     background-color: #66bb6a;
     border-color: #66bb6a;
 }
-  
+
 .round input[type="checkbox"]:checked + label:after {
     opacity: 1;
 }
@@ -900,8 +904,8 @@ label.error {
 }
 
 .b-table {
-    border-collapse: separate; 
-    border-spacing: 0 0px; 
+    border-collapse: separate;
+    border-spacing: 0 0px;
     margin-top: -10px; /* correct offset on first border spacing if desired */
 }
 
@@ -965,8 +969,8 @@ label.error {
 }
 
 .b-table-card {
-    border-collapse: separate; 
-    border-spacing: 0 1px; 
+    border-collapse: separate;
+    border-spacing: 0 1px;
     margin-top: -10px; /* correct offset on first border spacing if desired */
 }
 
@@ -975,12 +979,12 @@ label.error {
 }
 
 .b-table-card thead tr th:first-child {
-    border-top-left-radius: 5px; 
+    border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 .b-table-card thead tr th:last-child {
-    border-bottom-right-radius: 5px; 
-    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .b-table-card thead tr th{
@@ -1001,17 +1005,17 @@ label.error {
 }
 
 .b-table-card tbody tr td:first-child {
-    border-top-left-radius: 5px; 
+    border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 .b-table-card tbody tr td:last-child {
-    border-bottom-right-radius: 5px; 
-    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .c-table {
-    border-collapse: separate; 
-    border-spacing: 0 1px; 
+    border-collapse: separate;
+    border-spacing: 0 1px;
     margin-top: -10px; /* correct offset on first border spacing if desired */
 }
 
@@ -1041,8 +1045,8 @@ label.error {
 }
 
 .p-table {
-  border-collapse: separate; 
-  border-spacing: 0; 
+  border-collapse: separate;
+  border-spacing: 0;
   margin-top: -10px; /* correct offset on first border spacing if desired */
 }
 
@@ -1077,7 +1081,7 @@ label.error {
 }
 
 .p-table tbody tr:last-child td {
-  border-bottom: 2px solid #ecedf3; 
+  border-bottom: 2px solid #ecedf3;
 }
 
 /* =================================== */
@@ -1419,7 +1423,7 @@ input.fire-check:checked ~ section .notification-card .notification-card-progres
     transform: rotate(-45deg);
     background-color: #FFFFFF;
   }
-  
+
   @keyframes rotate-circle {
     0% {
       transform: rotate(-45deg);
@@ -1507,7 +1511,7 @@ input.fire-check:checked ~ section .notification-card .notification-card-progres
 }
 
 .f-modal-alert {}
-  
+
 .f-modal-alert .f-modal-icon {
     border-radius: 50%;
     border: 4px solid gray;
@@ -1658,52 +1662,52 @@ input.fire-check:checked ~ section .notification-card .notification-card-progres
   .f-modal-alert .f-modal-icon + .f-modal-icon {
     margin-top: 50px;
   }
-  
+
   .animateSuccessTip {
     -webkit-animation: animateSuccessTip 0.75s;
             animation: animateSuccessTip 0.75s;
   }
-  
+
   .animateSuccessLong {
     -webkit-animation: animateSuccessLong 0.75s;
             animation: animateSuccessLong 0.75s;
   }
-  
+
   .f-modal-icon.f-modal-success.animate:after {
     -webkit-animation: rotatePlaceholder 4.25s ease-in;
             animation: rotatePlaceholder 4.25s ease-in;
   }
-  
+
   .f-modal-icon.f-modal-error.animate:after {
     -webkit-animation: rotatePlaceholder 4.25s ease-in;
             animation: rotatePlaceholder 4.25s ease-in;
   }
-  
+
   .animateErrorIcon {
     -webkit-animation: animateErrorIcon 0.5s;
             animation: animateErrorIcon 0.5s;
   }
-  
+
   .animateXLeft {
     -webkit-animation: animateXLeft 0.75s;
             animation: animateXLeft 0.75s;
   }
-  
+
   .animateXRight {
     -webkit-animation: animateXRight 0.75s;
             animation: animateXRight 0.75s;
   }
-  
+
   .scaleWarning {
     -webkit-animation: scaleWarning 0.75s infinite alternate;
             animation: scaleWarning 0.75s infinite alternate;
   }
-  
+
   .pulseWarningIns {
     -webkit-animation: pulseWarningIns 0.75s infinite alternate;
             animation: pulseWarningIns 0.75s infinite alternate;
   }
-  
+
   @-webkit-keyframes animateSuccessTip {
     0%, 54% {
       width: 0;
@@ -1726,7 +1730,7 @@ input.fire-check:checked ~ section .notification-card .notification-card-progres
       top: 45px;
     }
   }
-  
+
   @keyframes animateSuccessTip {
     0%, 54% {
       width: 0;
@@ -1961,8 +1965,8 @@ input.fire-check:checked ~ section .notification-card .notification-card-progres
   }
 
 .sales-table {
-    border-collapse: separate; 
-    border-spacing: 0 1px; 
+    border-collapse: separate;
+    border-spacing: 0 1px;
     margin-top: -10px; /* correct offset on first border spacing if desired */
 }
 
@@ -1975,8 +1979,8 @@ input.fire-check:checked ~ section .notification-card .notification-card-progres
     /* border-bottom-left-radius: 5px; */
 }
 .sales-table thead tr th:last-child {
-    border-bottom-right-radius: 5px; 
-    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .sales-table thead tr th{
@@ -1998,17 +2002,17 @@ input.fire-check:checked ~ section .notification-card .notification-card-progres
 }
 
 .sales-table tbody tr td:first-child {
-    border-top-left-radius: 5px; 
+    border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 .sales-table tbody tr td:last-child {
-    border-bottom-right-radius: 5px; 
-    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .sales-table-bottom {
-    border-collapse: separate; 
-    border-spacing: 0 1px; 
+    border-collapse: separate;
+    border-spacing: 0 1px;
     margin-top: -10px; /* correct offset on first border spacing if desired */
 }
 
@@ -2021,8 +2025,8 @@ input.fire-check:checked ~ section .notification-card .notification-card-progres
     /* border-bottom-left-radius: 5px; */
 }
 .sales-table-bottom thead tr th:last-child {
-    border-bottom-right-radius: 5px; 
-    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .sales-table-bottom thead tr th{
@@ -2047,12 +2051,12 @@ input.fire-check:checked ~ section .notification-card .notification-card-progres
 }
 
 .sales-table-bottom tbody tr td:first-child {
-    border-top-left-radius: 5px; 
+    border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 .sales-table-bottom tbody tr td:last-child {
-    border-bottom-right-radius: 5px; 
-    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .border-top-card {
@@ -2092,8 +2096,8 @@ input.fire-check:checked ~ section .notification-card .notification-card-progres
   border-bottom: 1px solid #d4d5d8;
 }
 .autocomplete-items div:hover {
-  
-  background-color: #e9e9e9; 
+
+  background-color: #e9e9e9;
 }
 .autocomplete-active {
   background-color: #f7f9fc !important;
